@@ -1,0 +1,18 @@
+<div>
+  <button (click)="addField('text')">Add Text Field</button>
+  <button (click)="addField('checkbox')">Add Checkbox</button>
+
+  <form [formGroup]="formBuilderForm">
+    <div formArrayName="formFields">
+      <div *ngFor="let field of formFields.controls; let i = index" [formGroupName]="i">
+        <label>Field Label:</label>
+        <input type="text" formControlName="label" />
+
+        <label>Required:</label>
+        <input type="checkbox" formControlName="required" />
+      </div>
+    </div>
+  </form>
+  
+  <button (click)="saveForm()">Save Form</button>
+</div>

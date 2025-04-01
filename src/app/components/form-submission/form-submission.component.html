@@ -1,0 +1,9 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <div *ngFor="let field of formData.formFields">
+    <label>{{ field.label }}</label>
+    <input *ngIf="field.type === 'text'" type="text" [formControlName]="field.label" />
+    <input *ngIf="field.type === 'checkbox'" type="checkbox" [formControlName]="field.label" />
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

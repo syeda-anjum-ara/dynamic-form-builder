@@ -1,0 +1,14 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <label>Username</label>
+    <input type="text" formControlName="username" />
+    
+    <label>Password</label>
+    <input type="password" formControlName="password" />
+    
+    <label>Select Role</label>
+    <select formControlName="role">
+      <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+    </select>
+  
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form>

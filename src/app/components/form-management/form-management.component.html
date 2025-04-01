@@ -1,0 +1,4 @@
+<div *ngFor="let form of savedForms; let i = index">
+  <pre>{{ form | json }}</pre>
+  <button (click)="deleteForm(i)">Delete</button>
+</div>
