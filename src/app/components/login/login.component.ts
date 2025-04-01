@@ -23,7 +23,7 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       const { role } = this.loginForm.value;
       localStorage.setItem('role', role);
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard'])
     }
   }
 }
